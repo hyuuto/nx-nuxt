@@ -1,0 +1,30 @@
+{
+  "name": "demo",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "lint": "eslint . --ext .vue",
+    "format": "prettier -u --write",
+    "format:changed": "git diff --name-only --diff-filter=d HEAD | grep -e 'src.*\\.[jt]sx\\?$' -e 'src.*\\.json$' -e 'src.*\\.css$' -e 'src.*\\.md$' | xargs prettier -u --write",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "nx": {
+    "targets": {
+      "build": {
+        "outputs": [
+          "{projectRoot}/.output",
+          "{projectRoot}/.nuxt"
+        ]
+      }
+    },
+    "tags": [
+      "scope:demo"
+    ],
+    "implicitDependencies": [
+      "tag:scope:demo"
+    ]
+  }
+}
